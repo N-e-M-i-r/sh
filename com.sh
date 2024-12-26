@@ -1,6 +1,4 @@
-cp -r /etc/net/ifences/ens18/ /etc/net/ifences/ens20/
-
-echo 172.16.4.1/28>  /etc/net/ifences/ens20/ipv4address
- 
-sed -i "CONFIG_IPV4=yes" /etc/net/ifaces/ens20/options 
-sed -i 'ONBOOT=yes'  /etc/net/ifaces/ens20/options
+!/bin/bash
+echo "Фигня"
+sed -i  '/^#net.ipv4.ip_forward = 0/c\net.ipv4.ip_forward = 1' /etc/net/sysctl.conf
+echo "ГОТОВО"
